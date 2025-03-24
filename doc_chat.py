@@ -165,7 +165,7 @@ class DeepSeekLLM:
             return "抱歉，我无法获取回复。"
 
 # 初始化DeepSeek语言模型
-deepseek_api_key = "sk-ff6c3fa4fc4e453b92b7d023cd9efc4e"
+deepseek_api_key = "sk-key"
 llm = DeepSeekLLM(api_key=deepseek_api_key)
 
 # 处理文档的函数
@@ -175,7 +175,7 @@ def process_documents(input_files: List[str], output_dir: str, save_to_local=Fal
     final_output_dir = local_path if save_to_local and local_path else output_dir
     
     # 初始化硅基流动嵌入模型
-    embeddings = SiliconFlowEmbeddings(api_key="sk-nhyeljqothggnyzntjdzecdhivhvstzyqubhtafplbrxcjhi")
+    embeddings = SiliconFlowEmbeddings(api_key="sk-key")
     
     # 加载文档
     loaded_docs = []
@@ -239,7 +239,7 @@ def load_vectordb(db_path: str) -> Optional[Chroma]:
     
     try:
         # 初始化嵌入模型
-        embeddings = SiliconFlowEmbeddings(api_key="sk-nhyeljqothggnyzntjdzecdhivhvstzyqubhtafplbrxcjhi")
+        embeddings = SiliconFlowEmbeddings(api_key="sk-key")
         
         # 加载向量数据库
         from langchain_chroma import Chroma
